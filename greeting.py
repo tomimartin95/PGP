@@ -2,4 +2,4 @@
 # Greetings!
 
 def greeting():
-    print("Bienvenido al generador de contraseñas aleatorio\n")
+    print("\nBienvenido al generador de contraseñas aleatorio\n")
