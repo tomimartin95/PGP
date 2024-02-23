@@ -4,16 +4,41 @@ import random
 
 
 # Generator
+# def password_generator():
+#     while True:
+#         try:
+#             length = int(input("\nPor favor, ingrese la longitud deseada de la contraseña:\n-> "))
+#             if length < 6:
+#                 print("Es muy débil, pruebe con más caracteres")
+#                 continue
+#             caracters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-"
+#             password = "".join(random.sample(caracters, length))
+#             return password
+
+#         except ValueError:
+#             print("Por favor, ingrese un número entero")
+
+
 def password_generator():
     while True:
-        try:
-            length = int(input("\nPor favor, ingrese la longitud deseada de la contraseña:\n-> "))
-            if length < 6:
-                print("Es muy débil, pruebe con más caracteres")
-                continue
-            caracters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-"
-            password = "".join(random.sample(caracters, length))
-            return password
+        length = input("\nPor favor, ingrese la longitud deseada de la contraseña:\n-> ")
         
-        except ValueError:
-            print("Por favor, ingrese un número entero")
+        while not length.isdigit():
+            length = input("\nERROR, coloque un número\n-> ")
+        
+        length = int(length)
+        
+        if length < 6:
+            print("Es muy débil, pruebe con más caracteres")
+            
+            continue
+        
+        if length > 25:
+            print("Es muy larga, pruebe con menos caracteres")
+            
+            continue
+        
+        caracters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+=-"
+        password = "".join(random.sample(caracters, length))
+        
+        return password
