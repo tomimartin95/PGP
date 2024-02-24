@@ -4,11 +4,10 @@
 
 # Imports
 from greeting import greeting
-from generator import password_generator
+from pass_printer import pass_print
 
 
 # Program
 greeting()
 
-contrasena_generada = password_generator()
-print(f'\nTu nueva contraseña es: "{contrasena_generada}"\n')
+pass_print()
